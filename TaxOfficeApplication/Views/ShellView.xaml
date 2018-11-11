@@ -6,7 +6,7 @@
     xmlns:dialogs="https://github.com/fantasticfiasco/mvvm-dialogs"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="http://www.codeplex.com/prism"
-    Title="ShellView"
+    Title="{Binding Title, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
     Width="800"
     Height="450"
     dialogs:DialogServiceViews.IsRegistered="True"
