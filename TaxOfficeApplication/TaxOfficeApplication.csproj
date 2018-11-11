@@ -120,6 +120,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Events\MemoryStatusEvent.cs" />
     <Compile Include="Events\NavigateToEvent.cs" />
     <Compile Include="Interfaces\IBackgroundService.cs" />
     <Compile Include="Services\ShellBackgroundService.cs" />

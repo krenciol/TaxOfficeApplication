@@ -23,8 +23,8 @@ namespace TaxOfficeApplication.ViewModels
             this.regionManager = regionManager;
 
            // this.eventAggregator.GetEvent<TaskItemInsertEvent>().Subscribe(e => { this.Message = e.Description; }, ThreadOption.UIThread);
-           // this.eventAggregator.GetEvent<MemoryStatusEvent>().Subscribe(e => { this.MemoryStatus = e; }, ThreadOption.UIThread);
-           // this.eventAggregator.GetEvent<MemoryStatusEvent>().Publish(1);
+            this.eventAggregator.GetEvent<MemoryStatusEvent>().Subscribe(e => { this.MemoryStatus = e; }, ThreadOption.UIThread);
+            this.eventAggregator.GetEvent<MemoryStatusEvent>().Publish(1);
 
 
 
