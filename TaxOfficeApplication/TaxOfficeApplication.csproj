@@ -44,6 +44,10 @@
     <Reference Include="MvvmDialogs, Version=5.2.1.0, Culture=neutral, PublicKeyToken=3d3b9708589bc73e, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmDialogs.5.2.1\lib\net45\MvvmDialogs.dll</HintPath>
     </Reference>
+    <Reference Include="PobieranieDanychGusServiceDll, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\PobieranieDanychGusServiceDll.dll</HintPath>
+    </Reference>
     <Reference Include="Prism, Version=7.1.0.431, Culture=neutral, PublicKeyToken=40ee6c3a2184dc59, processorArchitecture=MSIL">
       <HintPath>..\packages\Prism.Core.7.1.0.431\lib\net45\Prism.dll</HintPath>
     </Reference>
@@ -143,6 +147,9 @@
       <DependentUpon>EditContractors.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\ShellBackgroundService.cs" />
+    <Compile Include="UserControls\ActiveUserControl.xaml.cs">
+      <DependentUpon>ActiveUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\ShellViewModel.Bindings.cs" />
     <Compile Include="ViewModels\ShellViewModel.Commands.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
@@ -190,6 +197,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\ActiveUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ShellView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -197,7 +208,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Behaviors\" />
-    <Folder Include="UserControls\" />
     <Folder Include="ValueConverters\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
