@@ -17,7 +17,7 @@ namespace TaxOfficeApplication.ViewModels
 
         public ICommand ExitCommand
         {
-            get => new DelegateCommand(() => { this.IsClosing = true; }, () => true);
+            get => new DelegateCommand(() => { this.IsClose = true; }, () => true);
         }
     }
 }

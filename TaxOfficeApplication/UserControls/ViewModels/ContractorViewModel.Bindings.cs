@@ -2,6 +2,7 @@
 {
     public sealed partial class ContractorViewModel
     {
+        private bool canAddAddress = false;
 
         private TaxOfficeApplication.Models.Contractor contractor;
 
@@ -12,5 +13,10 @@
             set => SetProperty(ref this.contractor, value);
         }
 
+        public bool CanAddAddress
+        {
+            get => this.canAddAddress;
+            set { this.SetProperty(ref this.canAddAddress, value); }
+        }
     }
 }

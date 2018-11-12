@@ -212,7 +212,7 @@
                 </Grid>
 
             </TabItem>
-            <TabItem Header="Adresy">
+            <TabItem Header="Adresy" IsEnabled="{Binding CanAddAddress, Mode=OneWay}">
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />

@@ -4,6 +4,7 @@
     xmlns:b="clr-namespace:TaxOfficeApplication.Behaviors"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
     xmlns:dialogs="https://github.com/fantasticfiasco/mvvm-dialogs"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="http://www.codeplex.com/prism"
@@ -13,9 +14,26 @@
     dialogs:DialogServiceViews.IsRegistered="True"
     prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d"
-    Closing="ShellView_OnClosing"
-    
+   
     >
+    <Window.Style>
+        <Style>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsClose}" Value="true">
+                    <Setter Property="b:WindowBehavior.Close" Value="true" />
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Style>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Closing">
+            <b:InvokeDelegateCommandAction Command="{Binding WindowClosingCommand, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                                           CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=InvokeParameter}" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="Closed">
+            <i:InvokeCommandAction Command="{Binding WindowClosedCommand, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />

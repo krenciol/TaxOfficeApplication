@@ -124,6 +124,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Behaviors\InvokeDelegateCommandAction.cs" />
     <Compile Include="Behaviors\WindowBehavior.cs" />
     <Compile Include="Events\AddContractorEvent.cs" />
     <Compile Include="Events\ContractorsListEvent.cs" />
