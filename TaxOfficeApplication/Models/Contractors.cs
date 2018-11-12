@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Windows.Documents;
 
 namespace TaxOfficeApplication.Models
 {
@@ -25,10 +27,14 @@ namespace TaxOfficeApplication.Models
         public int modifiedBy { get; set; }
         public DateTime modifiedDate { get; set; }
 
-//        public Contractors Clone()
-//        {
-//            return new Contractors();
-//        }
+
+        public List<Addresses> AddrsList = new List<Addresses>();
+        public Notes Notes = new Notes();
+
+        public Contractors Clone()
+        {
+            return new Contractors();
+        }
 
         object ICloneable.Clone()
         {

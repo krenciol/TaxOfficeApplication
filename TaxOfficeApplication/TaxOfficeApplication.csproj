@@ -120,18 +120,27 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Events\AddContractorEvent.cs" />
     <Compile Include="Events\ContractorsListEvent.cs" />
+    <Compile Include="Events\EditContractorEvent.cs" />
     <Compile Include="Events\GetContractorsEvent.cs" />
     <Compile Include="Events\MemoryStatusEvent.cs" />
     <Compile Include="Events\NavigateToEvent.cs" />
     <Compile Include="Interfaces\IBackgroundService.cs" />
+    <Compile Include="Models\Addresses.cs" />
     <Compile Include="Models\Contractors.cs" />
+    <Compile Include="Models\Notes.cs" />
     <Compile Include="Modules\ContractorModule.cs" />
     <Compile Include="Modules\ViewModels\ContractorViewModel.Bindings.cs" />
     <Compile Include="Modules\ViewModels\ContractorViewModel.Commands.cs" />
     <Compile Include="Modules\ViewModels\ContractorViewModel.cs" />
+    <Compile Include="Modules\ViewModels\EditContractorsViewModel.Bindings.cs" />
+    <Compile Include="Modules\ViewModels\EditContractorsViewModel.cs" />
     <Compile Include="Modules\Views\ContractorView.xaml.cs">
       <DependentUpon>ContractorView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Views\EditContractors.xaml.cs">
+      <DependentUpon>EditContractors.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\ShellBackgroundService.cs" />
     <Compile Include="ViewModels\ShellViewModel.Bindings.cs" />
@@ -170,6 +179,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Modules\Views\ContractorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\Views\EditContractors.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

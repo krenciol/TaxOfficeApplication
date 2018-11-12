@@ -30,11 +30,22 @@
         </StackPanel>
 
 
-        <xcdg:DataGridControl Grid.Row="1" ItemsSource="{Binding Path=Items, IsAsync=True}"/>
+        <xcdg:DataGridControl
+            Grid.Row="1"
+            AutoCreateColumns="True"
+            EditTriggers="None"
+            ItemsSource="{Binding Path=Items, IsAsync=True}"
+            SelectedItem="{Binding selectedItem, Mode=TwoWay}"
+            SelectionMode="Multiple">
+
+            <!--<xcdg:Column FieldName="Kod" />-->
+            <!-- <xcdg:Column FieldName="Nazwa" ></xcdg:Column> -->
+
+        </xcdg:DataGridControl>
 
 
 
-      
+
 
     </Grid>
 </UserControl>
