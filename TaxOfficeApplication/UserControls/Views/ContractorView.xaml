@@ -212,7 +212,12 @@
                 </Grid>
 
             </TabItem>
-            <TabItem Header="Adresy" IsEnabled="{Binding CanAddAddress, Mode=OneWay}">
+            <TabItem Header="Adresy">
+                <TabItem.Style>
+                    <Style TargetType="{x:Type TabItem}">
+                        <Setter Property="IsEnabled" Value="{Binding CanAddAddress, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                    </Style>
+                </TabItem.Style>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
