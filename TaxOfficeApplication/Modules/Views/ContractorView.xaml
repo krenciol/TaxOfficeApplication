@@ -6,6 +6,7 @@
     xmlns:dialog="https://github.com/fantasticfiasco/mvvm-dialogs"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="http://www.codeplex.com/prism"
+    xmlns:xcdg="http://schemas.xceed.com/wpf/xaml/datagrid"
     d:DesignHeight="450"
     d:DesignWidth="800"
     dialog:DialogServiceViews.IsRegistered="True"
@@ -17,5 +18,23 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0">
+            <Button
+                Width="70"
+                Margin="5"
+                HorizontalAlignment="Right"
+                Command="{Binding AddContractorCommand}"
+                Content="Nowy"
+                Style="{StaticResource OrangeButton}" />
+            <!--  OrangeButton  -->
+        </StackPanel>
+
+
+        <xcdg:DataGridControl Grid.Row="1" ItemsSource="{Binding Path=Items, IsAsync=True}"/>
+
+
+
+      
+
     </Grid>
 </UserControl>

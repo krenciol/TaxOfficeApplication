@@ -120,9 +120,19 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Events\ContractorsListEvent.cs" />
+    <Compile Include="Events\GetContractorsEvent.cs" />
     <Compile Include="Events\MemoryStatusEvent.cs" />
     <Compile Include="Events\NavigateToEvent.cs" />
     <Compile Include="Interfaces\IBackgroundService.cs" />
+    <Compile Include="Models\Contractors.cs" />
+    <Compile Include="Modules\ContractorModule.cs" />
+    <Compile Include="Modules\ViewModels\ContractorViewModel.Bindings.cs" />
+    <Compile Include="Modules\ViewModels\ContractorViewModel.Commands.cs" />
+    <Compile Include="Modules\ViewModels\ContractorViewModel.cs" />
+    <Compile Include="Modules\Views\ContractorView.xaml.cs">
+      <DependentUpon>ContractorView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Services\ShellBackgroundService.cs" />
     <Compile Include="ViewModels\ShellViewModel.Bindings.cs" />
     <Compile Include="ViewModels\ShellViewModel.Commands.cs" />
@@ -159,6 +169,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="Modules\Views\ContractorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Themes\Theme.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -170,9 +184,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Behaviors\" />
-    <Folder Include="Models\" />
-    <Folder Include="Modules\ViewModels\" />
-    <Folder Include="Modules\Views\" />
     <Folder Include="UserControls\" />
     <Folder Include="ValueConverters\" />
   </ItemGroup>

@@ -1,16 +1,29 @@
 ﻿using System;
+using System.Data;
+using System.Data.SqlClient;
 using System.Diagnostics;
+using System.Linq;
 using System.Windows.Threading;
+using Dapper;
 using Prism.Events;
+using TableDependency.SqlClient;
 using TaxOfficeApplication.Events;
 using TaxOfficeApplication.Interfaces;
+using TaxOfficeApplication.Models;
 
 namespace TaxOfficeApplication.Services
 {
-    public class ShellBackgroundService: IBackgroundService
+    public class ShellBackgroundService : IBackgroundService
     {
         private readonly IEventAggregator eventAggregator;
         private readonly DispatcherTimer dispatcherTimer = new DispatcherTimer(DispatcherPriority.Send);
+
+        //   private readonly SqlTableDependency<TaskItem> taskDependency;
+
+        private string ConnectionString
+        {
+            get { return Properties.Settings.Default.ConnectionString; }
+        }
 
         public ShellBackgroundService(IEventAggregator eventAggregator)
         {
@@ -26,7 +39,28 @@ namespace TaxOfficeApplication.Services
                 this.eventAggregator.GetEvent<MemoryStatusEvent>().Publish(memoryUsed / 1024 / 1024);
             };
             this.dispatcherTimer.Start();
+
+
+            //Pobranie listy kontrahentów.
+
+            this.eventAggregator.GetEvent<GetContractorsEvent>().Subscribe(() =>
+            {
+                using (var connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                                        DynamicParameters parameters = new DynamicParameters();
+                    //                    parameters.Add("@Id", 0);
+                    //                    parameters.Add("@Nip", "");
+                    var list = connection.Query<Contractors>("GetAllContrctor", parameters, commandType: CommandType.StoredProcedure).ToList();
+                    eventAggregator.GetEvent<ContractorsListEvent>().Publish(list);
+
+                }
+
+            }, ThreadOption.BackgroundThread, true);//BackgroundThread
+
+
         }
-        
+
     }
 }

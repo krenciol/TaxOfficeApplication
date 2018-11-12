@@ -15,8 +15,8 @@ namespace TaxOfficeApplication.ViewModels
         {
             get => new DelegateCommand(() =>
             {
-                this.eventAggregator.GetEvent<NavigateToEvent>().Publish("SampleView");
-          //      this.eventAggregator.GetEvent<GetContractorsEvent>().Publish();
+                this.eventAggregator.GetEvent<NavigateToEvent>().Publish("ContractorView");
+                this.eventAggregator.GetEvent<GetContractorsEvent>().Publish();
             });
         }
     }

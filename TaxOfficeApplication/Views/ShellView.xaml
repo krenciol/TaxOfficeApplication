@@ -37,6 +37,7 @@
                 Grid.Row="0"
                 MinWidth="80"
                 Margin="5"
+                Command="{Binding ShowContractorCommand}"
                 Content="Aktówka"
                 Style="{StaticResource OrangeButton}" />
 

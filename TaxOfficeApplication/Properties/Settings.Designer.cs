@@ -31,5 +31,16 @@ namespace TaxOfficeApplication.Properties {
                 return ((string)(this["AppTitle"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-A21C8H3\\SQL2017;Initial Catalog=TaxOffice;Persist Security In" +
+            "fo=True;User ID=sa;Password=997")]
+        public string ConnectionString {
+            get {
+                return ((string)(this["ConnectionString"]));
+            }
+        }
     }
 }

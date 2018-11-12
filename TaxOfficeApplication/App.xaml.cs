@@ -5,6 +5,7 @@ using Prism.Ioc;
 using Prism.Modularity;
 using Prism.Unity;
 using TaxOfficeApplication.Interfaces;
+using TaxOfficeApplication.Modules;
 using TaxOfficeApplication.Services;
 using TaxOfficeApplication.Views;
 
@@ -34,7 +35,7 @@ namespace TaxOfficeApplication
         {
             base.ConfigureModuleCatalog(moduleCatalog);
 
-          //  moduleCatalog.AddModule(typeof(SampleModule));
+            moduleCatalog.AddModule(typeof(ContractorModule));
           //  moduleCatalog.AddModule(typeof(Sample2Module));
         }
     }
