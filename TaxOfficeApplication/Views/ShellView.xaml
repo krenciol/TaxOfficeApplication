@@ -37,36 +37,42 @@
                 Grid.Row="0"
                 MinWidth="80"
                 Margin="5"
-                Content="Aktówka" />
+                Content="Aktówka"
+                Style="{StaticResource OrangeButton}" />
 
             <Button
                 Grid.Row="1"
                 MinWidth="80"
                 Margin="5"
-                Content="Umowy" />
+                Content="Umowy"
+                Style="{StaticResource OrangeButton}" />
 
             <Button
                 Grid.Row="2"
                 MinWidth="80"
                 Margin="5"
-                Content="Rozliczenia" />
+                Content="Rozliczenia"
+                Style="{StaticResource OrangeButton}" />
             <Button
                 Grid.Row="3"
                 MinWidth="80"
                 Margin="5"
-                Content="Profil podatnika" />
+                Content="Profil podatnika"
+                Style="{StaticResource OrangeButton}" />
 
             <Button
                 Grid.Row="3"
                 MinWidth="80"
                 Margin="5"
-                Content="Zadania" />
+                Content="Zadania"
+                Style="{StaticResource OrangeButton}" />
 
             <Button
                 Grid.Row="4"
                 MinWidth="80"
                 Margin="5"
-                Content="Wyniki klientów" />
+                Content="Wyniki"
+                Style="{StaticResource OrangeButton}" />
         </Grid>
         <ContentControl
             Grid.Row="1"
