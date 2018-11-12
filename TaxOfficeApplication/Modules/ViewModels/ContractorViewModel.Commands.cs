@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Prism.Commands;
 using System.Windows.Input;
-using Prism.Commands;
-using Prism.Regions;
 using TaxOfficeApplication.Events;
 using TaxOfficeApplication.Models;
 using TaxOfficeApplication.Modules.Views;
@@ -45,7 +39,7 @@ namespace TaxOfficeApplication.Modules.ViewModels
         {
             get => new DelegateCommand<Contractor>(c =>
             {
-                var vm = new EditContractorsViewModel(c.Clone());
+                var vm = new EditContractorsViewModel(c.Clone() as Contractor);
 
                 bool? success = this.dialogService.ShowDialog<EditContractors>(this, vm);
                 if (success == true)

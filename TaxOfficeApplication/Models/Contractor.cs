@@ -4,7 +4,7 @@ using System.Windows.Documents;
 
 namespace TaxOfficeApplication.Models
 {
-    public sealed class Contractor : ICloneable
+    public sealed class Contractor : System.IEquatable<Contractor>, System.ICloneable
     {
         public int id { get; }
         public int super { get; set; }
@@ -28,17 +28,20 @@ namespace TaxOfficeApplication.Models
         public DateTime modifiedDate { get; set; }
 
 
-        public List<Addresses> AddrsList = new List<Addresses>();
-        public Notes Notes = new Notes();
+//        public List<Addresses> AddrsList = new List<Addresses>();
+//        public Notes Notes = new Notes();
 
-        public Contractor Clone()
+        public object Clone()
         {
-            return new Contractor();
+            var item = (Contractor)this.MemberwiseClone();
+            return item;
         }
 
-        object ICloneable.Clone()
+
+
+        public bool Equals(Contractor other)
         {
-            return new Contractor();
+            return other != null && this.id.Equals(other.id);
         }
     }
 }
