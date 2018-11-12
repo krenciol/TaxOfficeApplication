@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Prism.Commands;
 using System.Windows.Input;
-using Prism.Commands;
 using TaxOfficeApplication.Events;
 
 namespace TaxOfficeApplication.ViewModels
@@ -18,6 +13,11 @@ namespace TaxOfficeApplication.ViewModels
                 this.eventAggregator.GetEvent<NavigateToEvent>().Publish("ContractorView");
                 this.eventAggregator.GetEvent<GetContractorsEvent>().Publish();
             });
+        }
+
+        public ICommand ExitCommand
+        {
+            get => new DelegateCommand(() => { this.IsClosing = true; }, () => true);
         }
     }
 }

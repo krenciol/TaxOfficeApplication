@@ -124,6 +124,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Behaviors\WindowBehavior.cs" />
     <Compile Include="Events\AddContractorEvent.cs" />
     <Compile Include="Events\ContractorsListEvent.cs" />
     <Compile Include="Events\EditContractorEvent.cs" />
@@ -143,8 +144,8 @@
     <Compile Include="Modules\Views\ContractorView.xaml.cs">
       <DependentUpon>ContractorView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Modules\Views\EditContractors.xaml.cs">
-      <DependentUpon>EditContractors.xaml</DependentUpon>
+    <Compile Include="Modules\Views\EditContractorsView.xaml.cs">
+      <DependentUpon>EditContractorsView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\ShellBackgroundService.cs" />
     <Compile Include="UserControls\ViewModels\ContractorViewModel.Bindings.cs" />
@@ -153,6 +154,7 @@
     <Compile Include="UserControls\Views\ContractorView.xaml.cs">
       <DependentUpon>ContractorView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\ShellViewModel.Behaviors.cs" />
     <Compile Include="ViewModels\ShellViewModel.Bindings.cs" />
     <Compile Include="ViewModels\ShellViewModel.Commands.cs" />
     <Compile Include="ViewModels\ShellViewModel.cs" />
@@ -192,7 +194,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Modules\Views\EditContractors.xaml">
+    <Page Include="Modules\Views\EditContractorsView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -210,7 +212,6 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Behaviors\" />
     <Folder Include="ValueConverters\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

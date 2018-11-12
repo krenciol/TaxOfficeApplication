@@ -80,7 +80,7 @@
                         Grid.Column="1"
                         MinWidth="500"
                         Margin="3"
-                        Text="{Binding NewContractor.code}" />
+                        Text="{Binding Contractor.code, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
                     <Label
                         Grid.Row="1"
@@ -92,10 +92,10 @@
                         Grid.Column="1"
                         MinWidth="500"
                         Margin="3"
-                        Text="{Binding NewContractor.name}" />
+                        Text="{Binding Contractor.name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
 
-                    <Label
+                    <!--<Label
                         Grid.Row="4"
                         Grid.Column="0"
                         Margin="3"
@@ -142,38 +142,38 @@
                             Width="350"
                             Margin="3"
                             HorizontalAlignment="Left"
-                            Text="{Binding NewContractor.Street}" />
+                            Text="{Binding NewContractor.Street}" />-->
 
-                        <!-- <Label Margin="10,0,10,0" Content="Numer" /> -->
-                        <!--  <TextBox  -->
-                        <!--  Width="50"  -->
-                        <!--  Margin="3"  -->
-                        <!--  Text="{Binding NewContractor.Number}" />  -->
-                        <!-- <Label Margin="10,0,10,0" Content="Lokal" /> -->
-                        <!--  <TextBox  -->
-                        <!--  Width="50"  -->
-                        <!--  Margin="3"  -->
-                        <!--  Text="{Binding NewContractor.House}" />  -->
-                    </WrapPanel>
+                    <!-- <Label Margin="10,0,10,0" Content="Numer" /> -->
+                    <!--  <TextBox  -->
+                    <!--  Width="50"  -->
+                    <!--  Margin="3"  -->
+                    <!--  Text="{Binding NewContractor.Number}" />  -->
+                    <!-- <Label Margin="10,0,10,0" Content="Lokal" /> -->
+                    <!--  <TextBox  -->
+                    <!--  Width="50"  -->
+                    <!--  Margin="3"  -->
+                    <!--  Text="{Binding NewContractor.House}" />  -->
+                    <!-- </WrapPanel> -->
 
-                    <Label
-                        Grid.Row="7"
-                        Grid.Column="0"
-                        Margin="3"
-                        Content="Kod pocztowy" />
-                    <WrapPanel Grid.Row="7" Grid.Column="1">
-                        <TextBox
-                            Width="90"
-                            Margin="3"
-                            HorizontalAlignment="Left"
-                            Text="{Binding NewContractor.PostalCode}" />
-
-                        <Label Margin="10,0,10,0" Content="Poczta" />
-                        <TextBox Width="200" Margin="3" />
-                        <!--  Text="{Binding NewContractor.NrIdCard}" />  -->
-                        <Label Margin="10,0,10,0" Content="Miejscowość" />
-                        <TextBox Width="200" Margin="3" />
-                    </WrapPanel>
+                    <!--  <Label  -->
+                    <!--  Grid.Row="7"  -->
+                    <!--  Grid.Column="0"  -->
+                    <!--  Margin="3"  -->
+                    <!--  Content="Kod pocztowy" />  -->
+                    <!-- <WrapPanel Grid.Row="7" Grid.Column="1"> -->
+                    <!--  <TextBox  -->
+                    <!--  Width="90"  -->
+                    <!--  Margin="3"  -->
+                    <!--  HorizontalAlignment="Left"  -->
+                    <!--  Text="{Binding NewContractor.PostalCode}" />  -->
+                    <!--    -->
+                    <!--     <Label Margin="10,0,10,0" Content="Poczta" /> -->
+                    <!--     <TextBox Width="200" Margin="3" /> -->
+                    <!--  ~1~  Text="{Binding NewContractor.NrIdCard}" />  @1@  -->
+                    <!--     <Label Margin="10,0,10,0" Content="Miejscowość" /> -->
+                    <!--     <TextBox Width="200" Margin="3" /> -->
+                    <!-- </WrapPanel> -->
 
                     <!--  <Label  -->
                     <!--  Grid.Row="8"  -->
@@ -223,11 +223,6 @@
                         <RowDefinition Height="*" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
-                    <ComboBox Grid.Row="0" Grid.Column="0">
-                        <ComboBoxItem>
-                            2
-                        </ComboBoxItem>
-                    </ComboBox>
                 </Grid>
             </TabItem>
             <TabItem Header="Osoby upoważnione" />
@@ -243,10 +238,5 @@
                 <DockPanel />
             </StatusBarItem>
         </StatusBar>
-
-
-
-        <!--  StringFormat=Phone: \{0:(000)\-0000\}}"  -->
-
     </Grid>
 </UserControl>

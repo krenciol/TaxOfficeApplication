@@ -18,14 +18,12 @@ namespace TaxOfficeApplication.Modules.ViewModels
             }
         }
 
-
-
         public ICommand AddContractorCommand
         {
             get => new DelegateCommand(() =>
             {
                 var vm = new EditContractorsViewModel(new Contractor());
-                bool? success = this.dialogService.ShowDialog<EditContractors>(this, vm);
+                bool? success = this.dialogService.ShowDialog<EditContractorsView>(this, vm);
                 if (success == true)
                 {
                     //wysłanie komunikatu o dodaniu nowego KH.
@@ -41,7 +39,7 @@ namespace TaxOfficeApplication.Modules.ViewModels
             {
                 var vm = new EditContractorsViewModel(c.Clone() as Contractor);
 
-                bool? success = this.dialogService.ShowDialog<EditContractors>(this, vm);
+                bool? success = this.dialogService.ShowDialog<EditContractorsView>(this, vm);
                 if (success == true)
                 {
                     //wysłanie komunikatu o edycji nowego KH.

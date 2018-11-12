@@ -1,6 +1,7 @@
 ﻿<Window
     x:Class="TaxOfficeApplication.Views.ShellView"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:b="clr-namespace:TaxOfficeApplication.Behaviors"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:dialogs="https://github.com/fantasticfiasco/mvvm-dialogs"
@@ -11,7 +12,10 @@
     Height="450"
     dialogs:DialogServiceViews.IsRegistered="True"
     prism:ViewModelLocator.AutoWireViewModel="True"
-    mc:Ignorable="d">
+    mc:Ignorable="d"
+    Closing="ShellView_OnClosing"
+    
+    >
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto" />

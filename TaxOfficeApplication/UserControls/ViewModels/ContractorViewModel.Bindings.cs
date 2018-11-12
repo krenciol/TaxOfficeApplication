@@ -1,17 +1,15 @@
-﻿using TaxOfficeApplication.Models;
-
-namespace TaxOfficeApplication.UserControls.ViewModels
+﻿namespace TaxOfficeApplication.UserControls.ViewModels
 {
     public sealed partial class ContractorViewModel
     {
 
-        private Contractor _newContractor;
+        private TaxOfficeApplication.Models.Contractor contractor;
 
 
-        public Contractor NewContractor
+        public TaxOfficeApplication.Models.Contractor Contractor
         {
-            get => this._newContractor;
-            set => SetProperty(ref this._newContractor, value);
+            get => this.contractor;
+            set => SetProperty(ref this.contractor, value);
         }
 
     }
