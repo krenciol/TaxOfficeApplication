@@ -14,11 +14,11 @@ namespace TaxOfficeApplication.Modules.ViewModels
 {
     public sealed partial class ContractorViewModel
     {
-        public DelegateCommand<Contractors> ContractorsSelectedCommand { get; private set; }
+        public DelegateCommand<Contractor> ContractorsSelectedCommand { get; private set; }
 
-        private void ContractorsSelected(Contractors contractors)
+        private void ContractorsSelected(Contractor contractor)
         {
-            if (contractors != null)
+            if (contractor != null)
             {
 
             }
@@ -30,7 +30,7 @@ namespace TaxOfficeApplication.Modules.ViewModels
         {
             get => new DelegateCommand(() =>
             {
-                var vm = new EditContractorsViewModel(new Contractors());
+                var vm = new EditContractorsViewModel(new Contractor());
                 bool? success = this.dialogService.ShowDialog<EditContractors>(this, vm);
                 if (success == true)
                 {
@@ -43,7 +43,7 @@ namespace TaxOfficeApplication.Modules.ViewModels
 
         public ICommand EditContractorCommand
         {
-            get => new DelegateCommand<Contractors>(c =>
+            get => new DelegateCommand<Contractor>(c =>
             {
                 var vm = new EditContractorsViewModel(c.Clone());
 

@@ -48,7 +48,7 @@ namespace TaxOfficeApplication.Services
                     //                   DynamicParameters parameters = new DynamicParameters();
                     //                    parameters.Add("@Id", 0);
                     //                    parameters.Add("@Nip", "");
-                    var list = connection.Query<Contractors>("GetAllContrctor", null, commandType: CommandType.StoredProcedure).ToList();
+                    var list = connection.Query<Contractor>("GetAllContrctor", null, commandType: CommandType.StoredProcedure).ToList();
                     eventAggregator.GetEvent<ContractorsListEvent>().Publish(list);
                 }
 

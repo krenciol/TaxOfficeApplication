@@ -4,7 +4,7 @@ using System.Windows.Documents;
 
 namespace TaxOfficeApplication.Models
 {
-    public sealed class Contractors : ICloneable
+    public sealed class Contractor : ICloneable
     {
         public int id { get; }
         public int super { get; set; }
@@ -31,14 +31,14 @@ namespace TaxOfficeApplication.Models
         public List<Addresses> AddrsList = new List<Addresses>();
         public Notes Notes = new Notes();
 
-        public Contractors Clone()
+        public Contractor Clone()
         {
-            return new Contractors();
+            return new Contractor();
         }
 
         object ICloneable.Clone()
         {
-            return new Contractors();
+            return new Contractor();
         }
     }
 }

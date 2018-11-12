@@ -4,12 +4,12 @@ namespace TaxOfficeApplication.Modules.ViewModels
 {
     public sealed partial class EditContractorsViewModel
     {
-        private Contractors contractor;
+        private Contractor _contractor;
 
-        public Contractors Contractor
+        public Contractor Contractor
         {
-            get => this.contractor;
-            set => this.SetProperty(ref this.contractor, value);
+            get => this._contractor;
+            set => this.SetProperty(ref this._contractor, value);
         }
 
     }

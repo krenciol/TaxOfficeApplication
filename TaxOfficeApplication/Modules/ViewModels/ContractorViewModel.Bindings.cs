@@ -5,16 +5,16 @@ namespace TaxOfficeApplication.Modules.ViewModels
 {
     public sealed partial class ContractorViewModel
     {
-        private ObservableCollection<Contractors> items = new ObservableCollection<Contractors>();
-        private Contractors selectedItem = null;
+        private ObservableCollection<Contractor> items = new ObservableCollection<Contractor>();
+        private Contractor selectedItem = null;
 
-        public ObservableCollection<Contractors> Items
+        public ObservableCollection<Contractor> Items
         {
             get => this.items;
             set => this.SetProperty(ref this.items, value);
         }
 
-        public Contractors SelectedItem
+        public Contractor SelectedItem
         {
             get => this.selectedItem;
             set => this.SetProperty(ref this.selectedItem, value);

@@ -3,7 +3,7 @@ using TaxOfficeApplication.Models;
 
 namespace TaxOfficeApplication.Events
 {
-    public class AddContractorEvent : PubSubEvent<Contractors>
+    public class AddContractorEvent : PubSubEvent<Contractor>
     {
         
     }

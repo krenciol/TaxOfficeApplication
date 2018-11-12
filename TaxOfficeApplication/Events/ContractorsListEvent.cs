@@ -4,7 +4,7 @@ using TaxOfficeApplication.Models;
 
 namespace TaxOfficeApplication.Events
 {
-    public sealed class ContractorsListEvent : PubSubEvent<List<Contractors>>
+    public sealed class ContractorsListEvent : PubSubEvent<List<Contractor>>
     {
         
     }

@@ -132,7 +132,7 @@
     <Compile Include="Events\NavigateToEvent.cs" />
     <Compile Include="Interfaces\IBackgroundService.cs" />
     <Compile Include="Models\Addresses.cs" />
-    <Compile Include="Models\Contractors.cs" />
+    <Compile Include="Models\Contractor.cs" />
     <Compile Include="Models\Notes.cs" />
     <Compile Include="Modules\ContractorModule.cs" />
     <Compile Include="Modules\ViewModels\ContractorViewModel.Bindings.cs" />
@@ -147,8 +147,11 @@
       <DependentUpon>EditContractors.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\ShellBackgroundService.cs" />
-    <Compile Include="UserControls\ActiveUserControl.xaml.cs">
-      <DependentUpon>ActiveUserControl.xaml</DependentUpon>
+    <Compile Include="UserControls\ViewModels\ContractorViewModel.Bindings.cs" />
+    <Compile Include="UserControls\ViewModels\ContractorViewModel.Commands.cs" />
+    <Compile Include="UserControls\ViewModels\ContractorViewModel.cs" />
+    <Compile Include="UserControls\Views\ContractorView.xaml.cs">
+      <DependentUpon>ContractorView.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\ShellViewModel.Bindings.cs" />
     <Compile Include="ViewModels\ShellViewModel.Commands.cs" />
@@ -197,7 +200,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\ActiveUserControl.xaml">
+    <Page Include="UserControls\Views\ContractorView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

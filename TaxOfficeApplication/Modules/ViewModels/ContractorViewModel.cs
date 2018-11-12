@@ -22,7 +22,7 @@ namespace TaxOfficeApplication.Modules.ViewModels
             this.eventAggregator = eventAggregator;
 
 
-            ContractorsSelectedCommand = new DelegateCommand<Contractors>(ContractorsSelected);
+            ContractorsSelectedCommand = new DelegateCommand<Contractor>(ContractorsSelected);
 
             // wysłanie event do bacgraoudservice o zwrócenie listy KH.
             // po naciśnięciu przycisku kontrahenci.

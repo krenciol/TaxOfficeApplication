@@ -7,9 +7,9 @@ namespace TaxOfficeApplication.Modules.ViewModels
     public sealed partial class EditContractorsViewModel : BindableBase, IModalDialogViewModel
     {
 
-        public EditContractorsViewModel(Contractors contractor)
+        public EditContractorsViewModel(Contractor contractor)
         {
-            this.contractor = contractor;
+            this._contractor = contractor;
         }
 
         public bool? DialogResult { get; private set; } = false;
