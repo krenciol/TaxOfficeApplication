@@ -62,7 +62,7 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
@@ -231,8 +231,60 @@
                             </ComboBox.ItemContainerStyle>
                         </ComboBox>
                     </Grid>
+                    <Grid
+                        Grid.Row="6"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <CheckBox
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Margin="5"
+                            Content="VAT-UE" />
+                        <RadioButton
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Margin="5"
+                            Content="Czynny VAT"
+                            GroupName="Group1"
+                            IsChecked="{Binding Path=RadioButton1IsChecked}" />
+                        <RadioButton
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            Margin="5"
+                            Content="Bierny VAT"
+                            GroupName="Group1"
+                            IsChecked="{Binding Path=RadioButton2IsChecked}" />
+
+                        <Grid Grid.Row="0" Grid.Column="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Content="Data rozpoczęcia działalności: " />
+                            <TextBox
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Text="{Binding xxx}" />
+                        </Grid>
 
 
+                    </Grid>
+                    <WrapPanel
+                        Grid.Row="13"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2">
+                        <Label Content="OPIEKUN: " />
+                        <TextBox Text="Admin" />
+                    </WrapPanel>
 
                     <!--  <Label  -->
                     <!--  Grid.Row="7"  -->
