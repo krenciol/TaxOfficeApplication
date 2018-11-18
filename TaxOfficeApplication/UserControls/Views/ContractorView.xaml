@@ -6,7 +6,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="http://www.codeplex.com/prism"
     d:DesignHeight="450"
-    d:DesignWidth="800"
+    d:DesignWidth="850"
     prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d">
     <Grid>
@@ -24,6 +24,7 @@
                 Margin="5"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Center"
+                Command="{Binding ContractorCloseForm}"
                 Content="Anuluj"
                 Style="{DynamicResource Windows10Button}" />
             <Button
@@ -79,9 +80,13 @@
                     <TextBox
                         Grid.Row="0"
                         Grid.Column="1"
-                        MinWidth="500"
+                        MinWidth="200"
                         Margin="3"
                         Text="{Binding Contractor.code, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="2"
+                        Content="Aktywny" />
 
                     <Label
                         Grid.Row="1"
@@ -97,47 +102,135 @@
 
 
                     <Label
-                        Grid.Row="4"
+                        Grid.Row="2"
                         Grid.Column="0"
                         Margin="3"
                         Content="Nip" />
-                    <WrapPanel Grid.Row="4" Grid.Column="1">
+                    <WrapPanel Grid.Row="2" Grid.Column="1">
 
                         <TextBox
-                            MinWidth="200"
+                            MinWidth="120"
                             Margin="3"
                             HorizontalAlignment="Left"
                             Text="{Binding Contractor.nip}" />
                         <Button
-                            Margin="5"
+                            Margin="1"
                             Content="Pobierz z GUS"
                             Style="{DynamicResource Windows10Button}" />
                         <Label Margin="10,0,10,0" Content="Regon" />
                         <TextBox
-                            MinWidth="200"
+                            MinWidth="120"
                             Margin="3"
                             Text="{Binding Contractor.regon}" />
+
+                        <Label Margin="10,0,10,0" Content="KRS" />
+                        <TextBox
+                            MinWidth="120"
+                            Margin="3"
+                            Text="{Binding Contractor.krs}" />
                     </WrapPanel>
 
                     <Label
-                        Grid.Row="5"
+                        Grid.Row="3"
                         Grid.Column="0"
                         Margin="3"
                         Content="Pesel" />
 
-                    <!-- <WrapPanel Grid.Row="5" Grid.Column="1"> -->
+                    <WrapPanel Grid.Row="3" Grid.Column="1">
+                        <TextBox
+                            MinWidth="200"
+                            Margin="3"
+                            HorizontalAlignment="Left"
+                            Text="{Binding Contractor.pesel}" />
+                    </WrapPanel>
+                    <Label
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        Content="Adres" />
+
                     <TextBox
-                        Grid.Row="5"
+                        Grid.Row="4"
                         Grid.Column="1"
-                        MinWidth="200"
-                        Margin="3"
-                        HorizontalAlignment="Left"
-                        Text="{Binding Contractor.pesel}" />
+                        MinWidth="350"
+                        Margin="3,3,0,3"
+                        Text="{Binding xxx}" />
 
-
-                    <!-- </WrapPanel> -->
-
-
+                    <Grid
+                        Grid.Row="5"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Content="Osoby upoważnione do kontaktu:" />
+                        <ComboBox
+                            Name="cbCities"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Margin="5"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Left"
+                            ItemsSource="{Binding}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Margin="2" Text="{Binding Name}" />
+                                        <TextBlock Margin="2" Text="{Binding State}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                            <ComboBox.ItemContainerStyle>
+                                <Style TargetType="{x:Type ComboBoxItem}">
+                                    <Setter Property="SnapsToDevicePixels" Value="True" />
+                                    <Setter Property="OverridesDefaultStyle" Value="True" />
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type ComboBoxItem}">
+                                                <Border
+                                                    Name="templateBorder"
+                                                    Padding="2"
+                                                    SnapsToDevicePixels="true">
+                                                    <ContentPresenter>
+                                                        <ContentPresenter.Content>
+                                                            <Grid>
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition />
+                                                                    <ColumnDefinition />
+                                                                    <ColumnDefinition />
+                                                                </Grid.ColumnDefinitions>
+                                                                <TextBlock
+                                                                    Grid.Column="0"
+                                                                    Margin="5"
+                                                                    Text="{Binding Name}" />
+                                                                <TextBlock
+                                                                    Grid.Column="1"
+                                                                    Margin="5"
+                                                                    Text="{Binding State}" />
+                                                                <TextBlock
+                                                                    Grid.Column="2"
+                                                                    Margin="5"
+                                                                    Text="{Binding Population}" />
+                                                            </Grid>
+                                                        </ContentPresenter.Content>
+                                                    </ContentPresenter>
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsHighlighted" Value="True">
+                                                        <Setter Property="Foreground" Value="{x:Static SystemColors.HighlightTextBrush}" />
+                                                        <Setter TargetName="templateBorder" Property="Background" Value="{x:Static SystemColors.HighlightBrush}" />
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ComboBox.ItemContainerStyle>
+                        </ComboBox>
+                    </Grid>
 
 
 

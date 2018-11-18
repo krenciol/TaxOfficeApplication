@@ -2,6 +2,5 @@
 {
     public sealed partial class ContractorViewModel
     {
-
     }
 }

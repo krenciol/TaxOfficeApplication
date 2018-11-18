@@ -15,7 +15,7 @@ namespace TaxOfficeApplication.UserControls.ViewModels
 
             this.eventAggregator.GetEvent<EditContractorEvent>()
                 .Subscribe(c => this.Contractor = c, ThreadOption.UIThread);
-
         }
+
     }
 }

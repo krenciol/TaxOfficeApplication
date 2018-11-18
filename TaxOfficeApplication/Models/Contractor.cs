@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Windows.Documents;
 
 namespace TaxOfficeApplication.Models
 {
@@ -13,11 +11,12 @@ namespace TaxOfficeApplication.Models
         public string code { get; set; }
         public string name { get; set; }
         public int marker { get; set; }
+        public string krs { get; set; }
         public int catalog { get; set; }
         public string nip { get; set; }
         public string regon { get; set; }
         public string pesel { get; set; }
-        public bool statusUe{ get; set; }
+        public bool statusUe { get; set; }
         public int countryId { get; set; }
         public string bankName { get; set; }
         public string bankAccount { get; set; }
@@ -28,8 +27,8 @@ namespace TaxOfficeApplication.Models
         public DateTime modifiedDate { get; set; }
 
 
-//        public List<Addresses> AddrsList = new List<Addresses>();
-//        public Notes Notes = new Notes();
+        //        public List<Addresses> AddrsList = new List<Addresses>();
+        //        public Notes Notes = new Notes();
 
         public object Clone()
         {
