@@ -64,6 +64,7 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
                         <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
@@ -275,11 +276,22 @@
 
                     </Grid>
 
-
-
-
-
                     <Grid Grid.Row="13" Grid.Column="1">
+                        <WrapPanel
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            HorizontalAlignment="Center">
+                            <Button MinWidth="50" MinHeight="50">
+                                <StackPanel>
+                                    <Image Source="../../Resources/attachment_2.png" />
+
+                                </StackPanel>
+                            </Button>
+                        </WrapPanel>
+
+                    </Grid>
+
+                        <Grid Grid.Row="14" Grid.Column="1">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
                             <ColumnDefinition Width="*" />
@@ -290,17 +302,7 @@
                             <TextBox Text="Admin" />
 
                         </WrapPanel>
-                        <WrapPanel
-                            Grid.Row="0"
-                            Grid.Column="1"
-                            HorizontalAlignment="Center">
-                            <Button>
-                                <StackPanel>
-                                    <Image Source="../../Resources/attachment_2.png" />
-
-                                </StackPanel>
-                            </Button>
-                        </WrapPanel>
+                       
                         <WrapPanel
                             Grid.Row="0"
                             Grid.Column="2"
