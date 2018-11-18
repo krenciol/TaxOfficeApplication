@@ -84,11 +84,6 @@
                         Margin="3"
                         Text="{Binding Contractor.code, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                     <Label
-                        Grid.Row="0"
-                        Grid.Column="2"
-                        Content="Aktywny" />
-
-                    <Label
                         Grid.Row="1"
                         Grid.Column="0"
                         Margin="3"
@@ -233,7 +228,7 @@
                     </Grid>
                     <Grid
                         Grid.Row="6"
-                        Grid.Column="0"
+                        Grid.Column="1"
                         Grid.ColumnSpan="2">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
@@ -277,19 +272,45 @@
                         </Grid>
 
 
-                    </Grid>
-                    <WrapPanel
-                        Grid.Row="13"
-                        Grid.Column="0"
-                        Grid.ColumnSpan="2">
-                        <Label Content="OPIEKUN: " />
-                        <TextBox Text="Admin" />
-                        <Button
-                            Margin="50,0,0,0"
-                            Content="Notatka"
-                            Style="{DynamicResource Windows10Button}" />
-                    </WrapPanel>
 
+                    </Grid>
+
+
+
+
+
+                    <Grid Grid.Row="13" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <WrapPanel Grid.Row="0" Grid.Column="0">
+                            <Label Content="OPIEKUN: " />
+                            <TextBox Text="Admin" />
+
+                        </WrapPanel>
+                        <WrapPanel
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            HorizontalAlignment="Center">
+                            <Button>
+                                <StackPanel>
+                                    <Image Source="../../Resources/attachment_2.png" />
+
+                                </StackPanel>
+                            </Button>
+                        </WrapPanel>
+                        <WrapPanel
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            HorizontalAlignment="Right">
+                            <Label
+                                Content="AKTYWNY"
+                                FontWeight="Bold"
+                                Foreground="Green" />
+                        </WrapPanel>
+                    </Grid>
 
                 </Grid>
 
