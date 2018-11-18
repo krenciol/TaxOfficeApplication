@@ -67,41 +67,41 @@
                 Margin="5"
                 Command="{Binding ShowContractorCommand}"
                 Content="Aktówka"
-                Style="{StaticResource OrangeButton}" />
+                Style="{StaticResource Windows10Button}" />
 
             <Button
                 Grid.Row="1"
                 MinWidth="80"
                 Margin="5"
                 Content="Umowy"
-                Style="{StaticResource OrangeButton}" />
+                Style="{StaticResource Windows10Button}" />
 
             <Button
                 Grid.Row="2"
                 MinWidth="80"
                 Margin="5"
                 Content="Rozliczenia"
-                Style="{StaticResource OrangeButton}" />
+                Style="{StaticResource Windows10Button}" />
             <Button
                 Grid.Row="3"
                 MinWidth="80"
                 Margin="5"
                 Content="Profil podatnika"
-                Style="{StaticResource OrangeButton}" />
+                Style="{StaticResource Windows10Button}" />
 
             <Button
                 Grid.Row="3"
                 MinWidth="80"
                 Margin="5"
                 Content="Zadania"
-                Style="{StaticResource OrangeButton}" />
+                Style="{StaticResource Windows10Button}" />
 
             <Button
                 Grid.Row="4"
                 MinWidth="80"
                 Margin="5"
                 Content="Wyniki"
-                Style="{StaticResource OrangeButton}" />
+                Style="{StaticResource Windows10Button}" />
         </Grid>
         <ContentControl
             Grid.Row="1"
