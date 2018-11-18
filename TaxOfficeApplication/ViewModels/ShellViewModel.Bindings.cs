@@ -6,6 +6,8 @@ namespace TaxOfficeApplication.ViewModels
     {
         private string message = string.Empty;
 
+        private string loggedUser = "Admin";//string.Empty;
+
         private DateTime currentDate;
 
         private string title = Properties.Settings.Default.AppTitle;
@@ -14,6 +16,12 @@ namespace TaxOfficeApplication.ViewModels
 
         private decimal width = 800;
         private decimal height = 450;
+
+        public string LoggedUser
+        {
+            get { return loggedUser; }
+            set { this.SetProperty(ref this.loggedUser, value); }
+        }
 
         public string Message
         {

@@ -156,6 +156,9 @@
     <Compile Include="UserControls\Views\ContractorView.xaml.cs">
       <DependentUpon>ContractorView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Views\ExampleUSerControl.xaml.cs">
+      <DependentUpon>ExampleUSerControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\ShellViewModel.Behaviors.cs" />
     <Compile Include="ViewModels\ShellViewModel.Bindings.cs" />
     <Compile Include="ViewModels\ShellViewModel.Commands.cs" />
@@ -205,6 +208,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\Views\ContractorView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Views\ExampleUSerControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -112,18 +112,58 @@
             Grid.Column="0"
             Grid.ColumnSpan="2">
 
-            <StatusBarItem HorizontalAlignment="Left">
-                <Label Padding="0" Content="{Binding Message, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+            <StatusBar.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </StatusBar.ItemsPanel>
+            <StatusBarItem Grid.Column="0">
+                <StackPanel Orientation="Horizontal">
+                    <!-- <Image Source="..\Images\bullet_green.png" Height="15" Width="15" /> -->
+                    <Label Padding="0" Content="{Binding Message, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                </StackPanel>
             </StatusBarItem>
-
-            <StatusBarItem HorizontalAlignment="Right">
+            <Separator Width="1" />
+            <StatusBarItem Grid.Column="1">
+                <StackPanel Orientation="Horizontal">
+                    <!-- <Image Source="..\Images\user_add.png" Height="15" Width="15" /> -->
+                    <TextBlock Name="txtCurrentContact" Text="{Binding StatusBarCurrentContact}" />
+                </StackPanel>
+            </StatusBarItem>
+            <Separator Width="1" />
+            <StatusBarItem Grid.Column="2">
+                <!--<ProgressBar Value="30" Width="80" Height="18"/>-->
+                <StackPanel Orientation="Horizontal">
+                    <!-- <Image Source="..\Images\database03.png" Height="15" Width="15" /> -->
+                    <TextBlock Name="txtDatabase" Text="{Binding StatusBarDatabase}" />
+                </StackPanel>
+            </StatusBarItem>
+            <Separator Width="1" />
+            <StatusBarItem Grid.Column="3">
                 <Label Padding="0" Content="{Binding CurrentDate, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:dd/MM/yyyy}}" />
             </StatusBarItem>
-            <StatusBarItem HorizontalAlignment="Right">
+
+            <StatusBarItem Grid.Column="4">
                 <Label
                     Padding="0"
                     Content="{Binding MemoryStatus, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
                     ContentStringFormat="{}{0} MB" />
+            </StatusBarItem>
+
+            <StatusBarItem Grid.Column="5">
+                <Label Padding="0" Content="{Binding LoggedUser, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
             </StatusBarItem>
         </StatusBar>
     </Grid>

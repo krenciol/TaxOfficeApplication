@@ -1,0 +1,67 @@
+﻿<UserControl
+    x:Class="TaxOfficeApplication.UserControls.Views.ExampleUSerControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:TaxOfficeApplication.UserControls.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Grid>
+        <StatusBar
+            Name="myStatusBar"
+            Grid.Row="2"
+            Height="23"
+            VerticalAlignment="Bottom">
+            <StatusBar.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </StatusBar.ItemsPanel>
+            <StatusBarItem Grid.Column="0">
+                <StackPanel Orientation="Horizontal">
+                    <!-- <Image Source="..\Images\bullet_green.png" Height="15" Width="15" /> -->
+                    <Label Padding="0" Content="{Binding Message, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                </StackPanel>
+            </StatusBarItem>
+            <Separator Width="1" />
+            <StatusBarItem Grid.Column="1">
+                <StackPanel Orientation="Horizontal">
+                    <!-- <Image Source="..\Images\user_add.png" Height="15" Width="15" /> -->
+                    <TextBlock Name="txtCurrentContact" Text="{Binding StatusBarCurrentContact}" />
+                </StackPanel>
+            </StatusBarItem>
+            <Separator Width="1" />
+            <StatusBarItem Grid.Column="2">
+                <!--<ProgressBar Value="30" Width="80" Height="18"/>-->
+                <StackPanel Orientation="Horizontal">
+                    <!-- <Image Source="..\Images\database03.png" Height="15" Width="15" /> -->
+                    <TextBlock Name="txtDatabase" Text="{Binding StatusBarDatabase}" />
+                </StackPanel>
+            </StatusBarItem>
+            <Separator Width="1" />
+            <StatusBarItem Grid.Column="3">
+                <Label Padding="0" Content="{Binding CurrentDate, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:dd/MM/yyyy}}" />
+            </StatusBarItem>
+
+            <StatusBarItem Grid.Column="4">
+                <Label
+                    Padding="0"
+                    Content="{Binding MemoryStatus, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                    ContentStringFormat="{}{0} MB" />
+            </StatusBarItem>
+        </StatusBar>
+    </Grid>
+</UserControl>
