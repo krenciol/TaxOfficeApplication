@@ -25,7 +25,7 @@
                 HorizontalAlignment="Right"
                 Command="{Binding AddContractorCommand}"
                 Content="Nowy"
-                Style="{StaticResource OrangeButton}" />
+                Style="{StaticResource Windows10Button}" />
             <!--  OrangeButton  -->
         </StackPanel>
 

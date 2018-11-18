@@ -14,29 +14,30 @@
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
             <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
 
-        <WrapPanel Grid.Row="0" HorizontalAlignment="Right">
+        <WrapPanel Grid.Row="2" HorizontalAlignment="Right">
             <Button
                 Width="100"
                 Margin="5"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Center"
                 Content="Anuluj"
-                Style="{DynamicResource GelButton}" />
+                Style="{DynamicResource Windows10Button}" />
             <Button
                 Width="100"
                 Margin="5"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Center"
                 Content="Zapisz"
-                Style="{DynamicResource GelButtonViolet}" />
+                Style="{DynamicResource Windows10Button}" />
         </WrapPanel>
         <TabControl
             Grid.Row="1"
             Margin="4"
-            TabStripPlacement="Bottom">
+            TabStripPlacement="Right">
             <TabItem Header="Ogólne" RenderTransformOrigin="0.5,0.5">
                 <TabItem.RenderTransform>
                     <TransformGroup>
@@ -237,7 +238,7 @@
             <TabItem Header="Rozliczenia" />
             <TabItem Header="Podatki" />
         </TabControl>
-        <StatusBar Grid.Row="2">
+        <StatusBar Grid.Row="3">
             <StatusBarItem HorizontalAlignment="Right">
 
                 <DockPanel />
