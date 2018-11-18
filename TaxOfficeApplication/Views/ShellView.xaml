@@ -114,6 +114,14 @@
             <StatusBarItem HorizontalAlignment="Left">
                 <Label Padding="0" Content="{Binding Message, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
             </StatusBarItem>
+
+            <StatusBarItem HorizontalAlignment="Right">
+
+                <Label
+                    Padding="0"
+                    Content="{Binding CurrentDate, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                    ContentStringFormat="{}{0}" />
+            </StatusBarItem>
             <StatusBarItem HorizontalAlignment="Right">
                 <Label
                     Padding="0"

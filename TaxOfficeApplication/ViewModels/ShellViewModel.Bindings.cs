@@ -1,15 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xceed.Wpf.DataGrid;
 
 namespace TaxOfficeApplication.ViewModels
 {
     public sealed partial class ShellViewModel
     {
         private string message = string.Empty;
+
+        private DateTime currentDate;
 
         private string title = Properties.Settings.Default.AppTitle;
 
@@ -22,6 +19,12 @@ namespace TaxOfficeApplication.ViewModels
         {
             get { return this.message; }
             set { this.SetProperty(ref this.message, value); }
+        }
+
+        public DateTime CurrentDate
+        {
+            get { return this.currentDate; }
+            set { this.SetProperty(ref this.currentDate, value); }
         }
 
         public string Title

@@ -128,6 +128,7 @@
     <Compile Include="Behaviors\WindowBehavior.cs" />
     <Compile Include="Events\AddContractorEvent.cs" />
     <Compile Include="Events\ContractorsListEvent.cs" />
+    <Compile Include="Events\CurrentDateEvent.cs" />
     <Compile Include="Events\EditContractorEvent.cs" />
     <Compile Include="Events\GetContractorsEvent.cs" />
     <Compile Include="Events\MemoryStatusEvent.cs" />

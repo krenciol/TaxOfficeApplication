@@ -30,6 +30,10 @@ namespace TaxOfficeApplication.ViewModels
             this.eventAggregator.GetEvent<MemoryStatusEvent>().Publish(1);
 
 
+            this.eventAggregator.GetEvent<CurrentDateEvent>().Subscribe(e => { this.CurrentDate = e; }, ThreadOption.UIThread);
+            this.eventAggregator.GetEvent<CurrentDateEvent>().Publish(DateTime.Now);
+
+
 
 
 
