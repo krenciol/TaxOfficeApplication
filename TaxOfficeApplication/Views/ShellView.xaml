@@ -111,16 +111,13 @@
             Grid.Row="2"
             Grid.Column="0"
             Grid.ColumnSpan="2">
+
             <StatusBarItem HorizontalAlignment="Left">
                 <Label Padding="0" Content="{Binding Message, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
             </StatusBarItem>
 
             <StatusBarItem HorizontalAlignment="Right">
-
-                <Label
-                    Padding="0"
-                    Content="{Binding CurrentDate, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
-                    ContentStringFormat="{}{0}" />
+                <Label Padding="0" Content="{Binding CurrentDate, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, StringFormat={}{0:dd/MM/yyyy}}" />
             </StatusBarItem>
             <StatusBarItem HorizontalAlignment="Right">
                 <Label
