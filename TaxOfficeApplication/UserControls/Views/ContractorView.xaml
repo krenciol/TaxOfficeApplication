@@ -36,10 +36,11 @@
                 Style="{DynamicResource Windows10Button}" />
         </WrapPanel>
         <TabControl
+
             Grid.Row="1"
             Margin="4"
             TabStripPlacement="Right">
-            <TabItem Header="Ogólne" RenderTransformOrigin="0.5,0.5">
+            <TabItem Header="Ogólne" RenderTransformOrigin="0.5,0.5" HorizontalAlignment="Left">
                 <TabItem.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform />
@@ -316,13 +317,13 @@
 
                 </Grid>
 
-            </TabItem>
-            <TabItem Header="Adresy">
-                <TabItem.Style>
-                    <Style TargetType="{x:Type TabItem}">
-                        <Setter Property="IsEnabled" Value="{Binding CanAddAddress, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
-                    </Style>
-                </TabItem.Style>
+            </TabItem >
+            <TabItem Header="Adresy" HorizontalAlignment="Left">
+                <!-- <TabItem.Style> -->
+                <!--     <Style TargetType="{x:Type TabItem}"> -->
+                <!--         <Setter Property="IsEnabled" Value="{Binding CanAddAddress, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" /> -->
+                <!--     </Style> -->
+                <!-- </TabItem.Style> -->
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
@@ -335,12 +336,12 @@
                     </Grid.RowDefinitions>
                 </Grid>
             </TabItem>
-            <TabItem Header="Osoby upoważnione" />
-            <TabItem Header="Urzędy" />
-            <TabItem Header="Profil podatnika" />
-            <TabItem Header="Umowy" />
-            <TabItem Header="Rozliczenia" />
-            <TabItem Header="Podatki" />
+            <TabItem Header="Osoby upoważnione"  HorizontalAlignment="Left"/>
+            <TabItem Header="Urzędy"  HorizontalAlignment="Left"/>
+            <TabItem Header="Profil podatnika"  HorizontalAlignment="Left"/>
+            <TabItem Header="Umowy"  HorizontalAlignment="Left"/>
+            <TabItem Header="Rozliczenia"  HorizontalAlignment="Left"/>
+            <TabItem Header="Podatki"  HorizontalAlignment="Left"/>
         </TabControl>
         <StatusBar Grid.Row="3">
             <StatusBarItem HorizontalAlignment="Right">
