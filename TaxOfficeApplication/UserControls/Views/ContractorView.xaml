@@ -471,7 +471,17 @@
                 </Grid>
             </TabItem>
             <TabItem HorizontalAlignment="Left" Header="Osoby upoważnione" />
-            <TabItem HorizontalAlignment="Left" Header="Urzędy" />
+            <TabItem HorizontalAlignment="Left" Header="Urzędy">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                </Grid>
+
+            </TabItem>
             <TabItem HorizontalAlignment="Left" Header="Profil podatnika" />
             <TabItem HorizontalAlignment="Left" Header="Umowy" />
             <TabItem HorizontalAlignment="Left" Header="Rozliczenia" />
