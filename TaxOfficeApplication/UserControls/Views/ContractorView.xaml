@@ -6,7 +6,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="http://www.codeplex.com/prism"
     d:DesignHeight="450"
-    d:DesignWidth="800"
+    d:DesignWidth="850"
     prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d">
     <Grid>
@@ -24,6 +24,7 @@
                 Margin="5"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Center"
+                Command="{Binding ContractorCloseForm}"
                 Content="Anuluj"
                 Style="{DynamicResource Windows10Button}" />
             <Button
@@ -38,7 +39,10 @@
             Grid.Row="1"
             Margin="4"
             TabStripPlacement="Right">
-            <TabItem Header="Ogólne" RenderTransformOrigin="0.5,0.5">
+            <TabItem
+                HorizontalAlignment="Left"
+                Header="Ogólne"
+                RenderTransformOrigin="0.5,0.5">
                 <TabItem.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform />
@@ -61,6 +65,7 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
@@ -79,10 +84,9 @@
                     <TextBox
                         Grid.Row="0"
                         Grid.Column="1"
-                        MinWidth="500"
+                        MinWidth="200"
                         Margin="3"
                         Text="{Binding Contractor.code, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-
                     <Label
                         Grid.Row="1"
                         Grid.Column="0"
@@ -96,129 +100,232 @@
                         Text="{Binding Contractor.name, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
 
-                    <!--<Label
-                        Grid.Row="4"
+                    <Label
+                        Grid.Row="2"
                         Grid.Column="0"
                         Margin="3"
                         Content="Nip" />
-                    <WrapPanel Grid.Row="4" Grid.Column="1">
+                    <WrapPanel Grid.Row="2" Grid.Column="1">
 
                         <TextBox
-                            Width="200"
+                            MinWidth="120"
                             Margin="3"
                             HorizontalAlignment="Left"
-                            Text="{Binding NewContractor.nip}" />
-                        <Button Margin="5" Content="Pobierz z GUS" />
+                            Text="{Binding Contractor.nip}" />
+                        <Button
+                            Margin="1"
+                            Content="Pobierz z GUS"
+                            Style="{DynamicResource Windows10Button}" />
                         <Label Margin="10,0,10,0" Content="Regon" />
                         <TextBox
-                            Width="200"
+                            MinWidth="120"
                             Margin="3"
-                            Text="{Binding NewContractor.regon}" />
+                            Text="{Binding Contractor.regon}" />
+
+                        <Label Margin="10,0,10,0" Content="KRS" />
+                        <TextBox
+                            MinWidth="120"
+                            Margin="3"
+                            Text="{Binding Contractor.krs}" />
                     </WrapPanel>
 
                     <Label
-                        Grid.Row="5"
+                        Grid.Row="3"
                         Grid.Column="0"
                         Margin="3"
                         Content="Pesel" />
 
-                    <WrapPanel Grid.Row="5" Grid.Column="1">
+                    <WrapPanel Grid.Row="3" Grid.Column="1">
                         <TextBox
-                            Width="200"
+                            MinWidth="200"
                             Margin="3"
                             HorizontalAlignment="Left"
-                            Text="{Binding NewContractor.pesel}" />
-
-
+                            Text="{Binding Contractor.pesel}" />
                     </WrapPanel>
-
                     <Label
-                        Grid.Row="6"
+                        Grid.Row="4"
                         Grid.Column="0"
-                        Margin="3"
-                        Content="Ulica" />
+                        Content="Adres" />
 
-                    <WrapPanel Grid.Row="6" Grid.Column="1">
-                        <TextBox
-                            Width="350"
-                            Margin="3"
-                            HorizontalAlignment="Left"
-                            Text="{Binding NewContractor.Street}" />-->
+                    <TextBox
+                        Grid.Row="4"
+                        Grid.Column="1"
+                        MinWidth="350"
+                        Margin="3,3,0,3"
+                        Text="{Binding xxx}" />
 
-                    <!-- <Label Margin="10,0,10,0" Content="Numer" /> -->
-                    <!--  <TextBox  -->
-                    <!--  Width="50"  -->
-                    <!--  Margin="3"  -->
-                    <!--  Text="{Binding NewContractor.Number}" />  -->
-                    <!-- <Label Margin="10,0,10,0" Content="Lokal" /> -->
-                    <!--  <TextBox  -->
-                    <!--  Width="50"  -->
-                    <!--  Margin="3"  -->
-                    <!--  Text="{Binding NewContractor.House}" />  -->
-                    <!-- </WrapPanel> -->
+                    <Grid
+                        Grid.Row="5"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Content="Osoby upoważnione do kontaktu:" />
+                        <ComboBox
+                            Name="cbCities"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Margin="5"
+                            HorizontalAlignment="Stretch"
+                            HorizontalContentAlignment="Left"
+                            ItemsSource="{Binding}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <TextBlock Margin="2" Text="{Binding Name}" />
+                                        <TextBlock Margin="2" Text="{Binding State}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                            <ComboBox.ItemContainerStyle>
+                                <Style TargetType="{x:Type ComboBoxItem}">
+                                    <Setter Property="SnapsToDevicePixels" Value="True" />
+                                    <Setter Property="OverridesDefaultStyle" Value="True" />
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type ComboBoxItem}">
+                                                <Border
+                                                    Name="templateBorder"
+                                                    Padding="2"
+                                                    SnapsToDevicePixels="true">
+                                                    <ContentPresenter>
+                                                        <ContentPresenter.Content>
+                                                            <Grid>
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition />
+                                                                    <ColumnDefinition />
+                                                                    <ColumnDefinition />
+                                                                </Grid.ColumnDefinitions>
+                                                                <TextBlock
+                                                                    Grid.Column="0"
+                                                                    Margin="5"
+                                                                    Text="{Binding Name}" />
+                                                                <TextBlock
+                                                                    Grid.Column="1"
+                                                                    Margin="5"
+                                                                    Text="{Binding State}" />
+                                                                <TextBlock
+                                                                    Grid.Column="2"
+                                                                    Margin="5"
+                                                                    Text="{Binding Population}" />
+                                                            </Grid>
+                                                        </ContentPresenter.Content>
+                                                    </ContentPresenter>
+                                                </Border>
+                                                <ControlTemplate.Triggers>
+                                                    <Trigger Property="IsHighlighted" Value="True">
+                                                        <Setter Property="Foreground" Value="{x:Static SystemColors.HighlightTextBrush}" />
+                                                        <Setter TargetName="templateBorder" Property="Background" Value="{x:Static SystemColors.HighlightBrush}" />
+                                                    </Trigger>
+                                                </ControlTemplate.Triggers>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </ComboBox.ItemContainerStyle>
+                        </ComboBox>
+                    </Grid>
+                    <Grid
+                        Grid.Row="6"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <CheckBox
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Margin="5"
+                            Content="VAT-UE" />
+                        <RadioButton
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Margin="5"
+                            Content="Czynny VAT"
+                            GroupName="Group1"
+                            IsChecked="{Binding Path=RadioButton1IsChecked}" />
+                        <RadioButton
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            Margin="5"
+                            Content="Bierny VAT"
+                            GroupName="Group1"
+                            IsChecked="{Binding Path=RadioButton2IsChecked}" />
 
-                    <!--  <Label  -->
-                    <!--  Grid.Row="7"  -->
-                    <!--  Grid.Column="0"  -->
-                    <!--  Margin="3"  -->
-                    <!--  Content="Kod pocztowy" />  -->
-                    <!-- <WrapPanel Grid.Row="7" Grid.Column="1"> -->
-                    <!--  <TextBox  -->
-                    <!--  Width="90"  -->
-                    <!--  Margin="3"  -->
-                    <!--  HorizontalAlignment="Left"  -->
-                    <!--  Text="{Binding NewContractor.PostalCode}" />  -->
-                    <!--    -->
-                    <!--     <Label Margin="10,0,10,0" Content="Poczta" /> -->
-                    <!--     <TextBox Width="200" Margin="3" /> -->
-                    <!--  ~1~  Text="{Binding NewContractor.NrIdCard}" />  @1@  -->
-                    <!--     <Label Margin="10,0,10,0" Content="Miejscowość" /> -->
-                    <!--     <TextBox Width="200" Margin="3" /> -->
-                    <!-- </WrapPanel> -->
+                        <Grid Grid.Row="0" Grid.Column="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Content="Data rozpoczęcia działalności: " />
+                            <TextBox
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Text="{Binding xxx}" />
+                        </Grid>
 
-                    <!--  <Label  -->
-                    <!--  Grid.Row="8"  -->
-                    <!--  Grid.Column="0"  -->
-                    <!--  Margin="3"  -->
-                    <!--  Content="Telefon" />  -->
-                    <!-- <WrapPanel Grid.Row="8" Grid.Column="1"> -->
-                    <!--  <TextBox  -->
-                    <!--  Width="130"  -->
-                    <!--  Margin="3"  -->
-                    <!--  HorizontalAlignment="Left"  -->
-                    <!--  Text="{Binding NewContractor.MainTel}" />  -->
-                    <!--    -->
-                    <!--     <Label Margin="10,0,10,0" Content="E-mail" /> -->
-                    <!--  <TextBox  -->
-                    <!--  Width="200"  -->
-                    <!--  Margin="3"  -->
-                    <!--  Text="{Binding NewContractor.MainEmail}" />  -->
-                    <!--    -->
-                    <!-- </WrapPanel> -->
 
-                    <!--  public string MainEmail { get; set; }  -->
-                    <!--  public string MainTel { get; set; }  -->
-                    <!--  public string MainWww { get; set; }  -->
-                    <!--  <Grid  -->
-                    <!--  Grid.Row="6"  -->
-                    <!--  Grid.Column="1"  -->
-                    <!--  Margin="5"  -->
-                    <!--  HorizontalAlignment="Right">  -->
-                    <!--     <Grid.ColumnDefinitions> -->
-                    <!--         <ColumnDefinition Width="Auto" /> -->
-                    <!--         <ColumnDefinition Width="Auto" /> -->
-                    <!--     </Grid.ColumnDefinitions> -->
-                    <!--    -->
-                    <!-- </Grid> -->
+
+                    </Grid>
+
+                    <Grid Grid.Row="13" Grid.Column="1">
+                        <WrapPanel
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            HorizontalAlignment="Center">
+                            <Button MinWidth="50" MinHeight="50">
+                                <StackPanel>
+                                    <Image Source="../../Resources/attachment_2.png" />
+
+                                </StackPanel>
+                            </Button>
+                        </WrapPanel>
+
+                    </Grid>
+
+                    <Grid Grid.Row="14" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <WrapPanel Grid.Row="0" Grid.Column="0">
+                            <Label Content="OPIEKUN: " />
+                            <TextBox Text="Admin" />
+
+                        </WrapPanel>
+
+                        <WrapPanel
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            HorizontalAlignment="Right">
+                            <Label
+                                Content="AKTYWNY"
+                                FontWeight="Bold"
+                                Foreground="Green" />
+                        </WrapPanel>
+                    </Grid>
+
                 </Grid>
 
             </TabItem>
-            <TabItem Header="Adresy">
-                <TabItem.Style>
-                    <Style TargetType="{x:Type TabItem}">
-                        <Setter Property="IsEnabled" Value="{Binding CanAddAddress, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
-                    </Style>
-                </TabItem.Style>
+            <TabItem HorizontalAlignment="Left" Header="Adresy">
+                <!-- <TabItem.Style> -->
+                <!--     <Style TargetType="{x:Type TabItem}"> -->
+                <!--         <Setter Property="IsEnabled" Value="{Binding CanAddAddress, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" /> -->
+                <!--     </Style> -->
+                <!-- </TabItem.Style> -->
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="Auto" />
@@ -226,17 +333,159 @@
                     </Grid.ColumnDefinitions>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
                         <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
+                    <Label
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Margin="5"
+                        Content="Adres korespondencyjny:" />
+                    <StackPanel
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="5"
+                                Content="Ulica" />
+                            <TextBox
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Margin="5" />
+
+                            <Grid
+                                Grid.Row="0"
+                                Grid.Column="2"
+                                Margin="5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Content="Numer" />
+                                <TextBox Grid.Row="0" Grid.Column="1" />
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="2"
+                                    Content="Lokal" />
+                                <TextBox Grid.Row="0" Grid.Column="3" />
+
+                            </Grid>
+
+
+                        </Grid>
+
+                    </StackPanel>
+
+                    <Grid
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Margin="5"
+                            Content="Kod Poczt" />
+                        <TextBox
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Margin="5" />
+                        <Grid
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Label
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Content="Miasto" />
+                            <TextBox Grid.Row="0" Grid.Column="1" />
+                        </Grid>
+                    </Grid>
+                    <DockPanel
+                        Grid.Row="3"
+                        Grid.Column="1"
+                        Margin="5">
+                        <Label Content="Województwo:" />
+                        <TextBox Text="Podkarpackie" />
+                    </DockPanel>
+
+
+
+                    <DataGrid
+                        Grid.Row="5"
+                        Grid.Column="1"
+                        Margin="5"
+                        AutoGenerateColumns="True"
+                        CanUserAddRows="False"
+                        CanUserDeleteRows="False"
+                        IsReadOnly="True"
+                        ItemsSource="{Binding Items, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, IsAsync=True}"
+                        SelectedItem="{Binding SelectedItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        SelectionMode="Single"
+                        SelectionUnit="FullRow ">
+                        <!-- <DataGrid.InputBindings> -->
+                        <!--  <KeyBinding  -->
+                        <!--  Key="Enter"  -->
+                        <!--  Command="{Binding EditContractorCommand}"  -->
+                        <!--  CommandParameter="{Binding SelectedItem}" />  -->
+                        <!--  <MouseBinding  -->
+                        <!--  Command="{Binding EditContractorCommand}"  -->
+                        <!--  CommandParameter="{Binding SelectedItem}"  -->
+                        <!--  MouseAction="LeftDoubleClick" />  -->
+                        <!-- </DataGrid.InputBindings> -->
+                    </DataGrid>
+
                 </Grid>
             </TabItem>
-            <TabItem Header="Osoby upoważnione" />
-            <TabItem Header="Urzędy" />
-            <TabItem Header="Profil podatnika" />
-            <TabItem Header="Umowy" />
-            <TabItem Header="Rozliczenia" />
-            <TabItem Header="Podatki" />
+            <TabItem HorizontalAlignment="Left" Header="Osoby upoważnione" />
+            <TabItem HorizontalAlignment="Left" Header="Urzędy">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                </Grid>
+
+            </TabItem>
+            <TabItem HorizontalAlignment="Left" Header="Profil podatnika" />
+            <TabItem HorizontalAlignment="Left" Header="Umowy" />
+            <TabItem HorizontalAlignment="Left" Header="Rozliczenia" />
+            <TabItem HorizontalAlignment="Left" Header="Podatki" />
         </TabControl>
         <StatusBar Grid.Row="3">
             <StatusBarItem HorizontalAlignment="Right">

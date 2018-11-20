@@ -12,9 +12,10 @@ namespace TaxOfficeApplication.UserControls.ViewModels
         {
             this.eventAggregator = eventAggregator;
 
+
             this.eventAggregator.GetEvent<EditContractorEvent>()
                 .Subscribe(c => this.Contractor = c, ThreadOption.UIThread);
-
         }
+
     }
 }

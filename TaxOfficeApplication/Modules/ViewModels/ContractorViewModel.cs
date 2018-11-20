@@ -8,8 +8,9 @@ using TaxOfficeApplication.Models;
 
 namespace TaxOfficeApplication.Modules.ViewModels
 {
-    public sealed partial class ContractorViewModel: BindableBase
+    public sealed partial class ContractorViewModel : BindableBase
     {
+
         public IDialogService dialogService { get; }
         public IRegionManager regionManager { get; }
         public IEventAggregator eventAggregator;
@@ -20,7 +21,6 @@ namespace TaxOfficeApplication.Modules.ViewModels
             this.dialogService = dialogService;
             this.regionManager = regionManager;
             this.eventAggregator = eventAggregator;
-
 
             ContractorsSelectedCommand = new DelegateCommand<Contractor>(ContractorsSelected);
 

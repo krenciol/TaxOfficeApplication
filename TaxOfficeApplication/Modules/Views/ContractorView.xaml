@@ -51,22 +51,5 @@
             </DataGrid.InputBindings>
         </DataGrid>
 
-        <!--  <xcdg:DataGridControl  -->
-        <!--  Grid.Row="1"  -->
-        <!--  AutoCreateColumns="True"  -->
-        <!--  EditTriggers="None"  -->
-        <!--  ItemsSource="{Binding Path=Items, IsAsync=True}"  -->
-        <!--  SelectedItem="{Binding selectedItem, Mode=TwoWay}"  -->
-        <!--  SelectionMode="Single">  -->
-        <!--    -->
-        <!--     ~1~<xcdg:Column FieldName="Kod" />@1@ -->
-        <!--     ~1~ <xcdg:Column FieldName="Nazwa" ></xcdg:Column> @1@ -->
-        <!--    -->
-        <!-- </xcdg:DataGridControl> -->
-
-
-
-
-
     </Grid>
 </UserControl>
