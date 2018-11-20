@@ -355,8 +355,10 @@
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="Auto" />
                                 <ColumnDefinition Width="*" />
+                                <!-- <ColumnDefinition Width="*" /> -->
+                                <!-- <ColumnDefinition Width="Auto" /> -->
+                                <!-- <ColumnDefinition Width="*" /> -->
                             </Grid.ColumnDefinitions>
                             <Label
                                 Grid.Row="0"
@@ -364,11 +366,29 @@
                                 Content="Ulica" />
                             <TextBox Grid.Row="0" Grid.Column="1" />
 
-                            <Label
-                                Grid.Row="0"
-                                Grid.Column="2"
-                                Content="Numer" />
-                            <TextBox Grid.Row="0" Grid.Column="3" />
+                            <Grid Grid.Row="0" Grid.Column="2">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Content="Numer" />
+                                <TextBox Grid.Row="0" Grid.Column="1" />
+                                <Label
+                                    Grid.Row="0"
+                                    Grid.Column="2"
+                                    Content="Lokal" />
+                                <TextBox Grid.Row="0" Grid.Column="3" />
+
+                            </Grid>
+
+
                         </Grid>
 
                     </StackPanel>
