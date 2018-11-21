@@ -43,11 +43,6 @@ namespace TaxOfficeApplication.Services
 
 
 
-
-
-
-
-
             //Pobranie listy kontrahentów.
             this.eventAggregator.GetEvent<GetContractorsEvent>().Subscribe(() =>
             {
@@ -59,6 +54,23 @@ namespace TaxOfficeApplication.Services
                     //                    parameters.Add("@Nip", "");
                     var list = connection.Query<Contractor>("GetAllContrctor", null, commandType: CommandType.StoredProcedure).ToList();
                     eventAggregator.GetEvent<ContractorsListEvent>().Publish(list);
+                }
+
+            }, ThreadOption.BackgroundThread, true);
+
+
+            //Pobranie listy adresów.
+            this.eventAggregator.GetEvent<GetAdressessEvent>().Subscribe((id) =>
+            {
+                using (var connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+                    DynamicParameters parameters = new DynamicParameters();
+                    parameters.Add("@Id", id);
+
+                    var list = connection.Query<Addresses>("GetAllAdressInContractor", parameters, commandType: CommandType.StoredProcedure).ToList();
+
+                    eventAggregator.GetEvent<AddressessListEvent>().Publish(list);
                 }
 
             }, ThreadOption.BackgroundThread, true);
