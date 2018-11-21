@@ -1,6 +1,5 @@
 ﻿using Prism.Events;
 using Prism.Mvvm;
-using TaxOfficeApplication.Events;
 
 namespace TaxOfficeApplication.UserControls.ViewModels
 {
@@ -12,9 +11,9 @@ namespace TaxOfficeApplication.UserControls.ViewModels
         {
             this.eventAggregator = eventAggregator;
 
-
-            this.eventAggregator.GetEvent<EditContractorEvent>()
-                .Subscribe(c => this.Contractor = c, ThreadOption.UIThread);
+            //
+            //            this.eventAggregator.GetEvent<EditContractorEvent>()
+            //                .Subscribe(c => this.Contractor = c, ThreadOption.UIThread);
         }
 
     }

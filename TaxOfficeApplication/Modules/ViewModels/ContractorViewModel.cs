@@ -1,10 +1,8 @@
 ﻿using MvvmDialogs;
-using Prism.Commands;
 using Prism.Events;
 using Prism.Mvvm;
 using Prism.Regions;
 using TaxOfficeApplication.Events;
-using TaxOfficeApplication.Models;
 
 namespace TaxOfficeApplication.Modules.ViewModels
 {
@@ -22,7 +20,6 @@ namespace TaxOfficeApplication.Modules.ViewModels
             this.regionManager = regionManager;
             this.eventAggregator = eventAggregator;
 
-            ContractorsSelectedCommand = new DelegateCommand<Contractor>(ContractorsSelected);
 
             // wysłanie event do bacgraoudservice o zwrócenie listy KH.
             // po naciśnięciu przycisku kontrahenci.

@@ -8,15 +8,7 @@ namespace TaxOfficeApplication.Modules.ViewModels
 {
     public sealed partial class ContractorViewModel
     {
-        public DelegateCommand<Contractor> ContractorsSelectedCommand { get; private set; }
 
-        private void ContractorsSelected(Contractor contractor)
-        {
-            if (contractor != null)
-            {
-
-            }
-        }
 
         public ICommand AddContractorCommand
         {

@@ -60,11 +60,6 @@
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
-                        <RowDefinition Height="Auto" />
                         <RowDefinition Height="*" />
                         <RowDefinition Height="Auto" />
                         <RowDefinition Height="Auto" />
@@ -111,7 +106,7 @@
                             MinWidth="120"
                             Margin="3"
                             HorizontalAlignment="Left"
-                            Text="{Binding Contractor.nip}" />
+                            Text="{Binding Contractor.nip, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                         <Button
                             Margin="1"
                             Content="Pobierz z GUS"
@@ -120,13 +115,13 @@
                         <TextBox
                             MinWidth="120"
                             Margin="3"
-                            Text="{Binding Contractor.regon}" />
+                            Text="{Binding Contractor.regon, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
                         <Label Margin="10,0,10,0" Content="KRS" />
                         <TextBox
                             MinWidth="120"
                             Margin="3"
-                            Text="{Binding Contractor.krs}" />
+                            Text="{Binding Contractor.krs, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                     </WrapPanel>
 
                     <Label
@@ -140,7 +135,7 @@
                             MinWidth="200"
                             Margin="3"
                             HorizontalAlignment="Left"
-                            Text="{Binding Contractor.pesel}" />
+                            Text="{Binding Contractor.pesel, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                     </WrapPanel>
                     <Label
                         Grid.Row="4"
@@ -244,7 +239,8 @@
                             Grid.Row="0"
                             Grid.Column="0"
                             Margin="5"
-                            Content="VAT-UE" />
+                            Content="VAT-UE"
+                            IsChecked="{Binding Contractor.statusUE}" />
                         <RadioButton
                             Grid.Row="0"
                             Grid.Column="1"
@@ -279,20 +275,20 @@
 
                     </Grid>
 
-                    <Grid Grid.Row="13" Grid.Column="1">
-                        <WrapPanel
-                            Grid.Row="0"
-                            Grid.Column="0"
-                            HorizontalAlignment="Center">
-                            <Button MinWidth="50" MinHeight="50">
-                                <StackPanel>
-                                    <Image Source="../../Resources/attachment_2.png" />
-
-                                </StackPanel>
-                            </Button>
-                        </WrapPanel>
-
-                    </Grid>
+                    <!-- <Grid Grid.Row="13" Grid.Column="1"> -->
+                    <!--  <WrapPanel  -->
+                    <!--  Grid.Row="0"  -->
+                    <!--  Grid.Column="0"  -->
+                    <!--  HorizontalAlignment="Center">  -->
+                    <!--         <Button MinWidth="50" MinHeight="50"> -->
+                    <!--             <StackPanel> -->
+                    <!--                 <Image Source="../../Resources/attachment_2.png" /> -->
+                    <!--    -->
+                    <!--             </StackPanel> -->
+                    <!--         </Button> -->
+                    <!--     </WrapPanel> -->
+                    <!--    -->
+                    <!-- </Grid> -->
 
                     <Grid Grid.Row="14" Grid.Column="1">
                         <Grid.ColumnDefinitions>
@@ -320,7 +316,11 @@
                 </Grid>
 
             </TabItem>
-            <TabItem HorizontalAlignment="Left" Header="Adresy">
+            <TabItem
+                Height="20"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Bottom"
+                Header="Adresy">
                 <!-- <TabItem.Style> -->
                 <!--     <Style TargetType="{x:Type TabItem}"> -->
                 <!--         <Setter Property="IsEnabled" Value="{Binding CanAddAddress, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" /> -->
@@ -369,7 +369,8 @@
                             <TextBox
                                 Grid.Row="0"
                                 Grid.Column="1"
-                                Margin="5" />
+                                Margin="5"
+                                Text="{Binding Addresseses[0].code, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
                             <Grid
                                 Grid.Row="0"
