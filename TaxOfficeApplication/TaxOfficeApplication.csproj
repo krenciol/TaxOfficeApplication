@@ -158,11 +158,11 @@
       <DependentUpon>ResourceICO.resx</DependentUpon>
     </Compile>
     <Compile Include="Services\ShellBackgroundService.cs" />
-    <Compile Include="UserControls\ViewModels\ContractorViewModel.Bindings.cs" />
-    <Compile Include="UserControls\ViewModels\ContractorViewModel.Commands.cs" />
-    <Compile Include="UserControls\ViewModels\ContractorViewModel.cs" />
-    <Compile Include="UserControls\Views\ContractorView.xaml.cs">
-      <DependentUpon>ContractorView.xaml</DependentUpon>
+    <Compile Include="UserControls\ViewModels\General_Data_Of_The_Contractor.Bindings.cs" />
+    <Compile Include="UserControls\ViewModels\General_Data_Of_The_Contractor.Commands.cs" />
+    <Compile Include="UserControls\ViewModels\General_Data_Of_The_Contractor.Model.cs" />
+    <Compile Include="UserControls\Views\General_Data_Of_The_Contractor.xaml.cs">
+      <DependentUpon>General_Data_Of_The_Contractor.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Views\ExampleUSerControl.xaml.cs">
       <DependentUpon>ExampleUSerControl.xaml</DependentUpon>
@@ -219,7 +219,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\Views\ContractorView.xaml">
+    <Page Include="UserControls\Views\General_Data_Of_The_Contractor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

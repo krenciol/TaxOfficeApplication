@@ -15,5 +15,5 @@
     dialog:DialogServiceViews.IsRegistered="True"
     prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d">
-    <uc:ActiveUserControl />
+    <uc:General_Data_Of_The_Contractor />
 </Window>
