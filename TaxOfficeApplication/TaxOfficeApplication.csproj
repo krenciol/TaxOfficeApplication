@@ -158,14 +158,20 @@
       <DependentUpon>ResourceICO.resx</DependentUpon>
     </Compile>
     <Compile Include="Services\ShellBackgroundService.cs" />
-    <Compile Include="UserControls\ViewModels\General_Data_Of_The_Contractor.Bindings.cs" />
-    <Compile Include="UserControls\ViewModels\General_Data_Of_The_Contractor.Commands.cs" />
-    <Compile Include="UserControls\ViewModels\General_Data_Of_The_Contractor.Model.cs" />
-    <Compile Include="UserControls\Views\General_Data_Of_The_Contractor.xaml.cs">
-      <DependentUpon>General_Data_Of_The_Contractor.xaml</DependentUpon>
+    <Compile Include="UserControls\ViewModels\AddressDataOfTheContractor.Bindings.cs" />
+    <Compile Include="UserControls\ViewModels\AddressDataOfTheContractor.Commands.cs" />
+    <Compile Include="UserControls\ViewModels\AddressDataOfTheContractor.Model.cs" />
+    <Compile Include="UserControls\ViewModels\GeneralDataOfTheContractor.Bindings.cs" />
+    <Compile Include="UserControls\ViewModels\GeneralDataOfTheContractor.Commands.cs" />
+    <Compile Include="UserControls\ViewModels\GeneralDataOfTheContractor.Model.cs" />
+    <Compile Include="UserControls\Views\AddressDataOfTheContractor.xaml.cs">
+      <DependentUpon>AddressDataOfTheContractor.xaml</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\Views\ExampleUSerControl.xaml.cs">
-      <DependentUpon>ExampleUSerControl.xaml</DependentUpon>
+    <Compile Include="UserControls\Views\GeneralDataOfTheContractor.xaml.cs">
+      <DependentUpon>GeneralDataOfTheContractor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Views\xxx_ExampleUSerControl.xaml.cs">
+      <DependentUpon>xxx_ExampleUSerControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\ShellViewModel.Behaviors.cs" />
     <Compile Include="ViewModels\ShellViewModel.Bindings.cs" />
@@ -219,11 +225,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\Views\General_Data_Of_The_Contractor.xaml">
+    <Page Include="UserControls\Views\AddressDataOfTheContractor.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="UserControls\Views\ExampleUSerControl.xaml">
+    <Page Include="UserControls\Views\GeneralDataOfTheContractor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Views\xxx_ExampleUSerControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

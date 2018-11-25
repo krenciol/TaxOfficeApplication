@@ -15,5 +15,24 @@
     dialog:DialogServiceViews.IsRegistered="True"
     prism:ViewModelLocator.AutoWireViewModel="True"
     mc:Ignorable="d">
-    <uc:General_Data_Of_The_Contractor />
+
+    <TabControl Margin="4" TabStripPlacement="Right">
+        <TabItem HorizontalAlignment="Left" Header="Ogólne">
+            <uc:GeneralDataOfTheContractor />
+        </TabItem>
+        <TabItem HorizontalAlignment="Left" Header="Adresy">
+            <uc:AddressDataOfTheContractor />
+        </TabItem>
+        <TabItem HorizontalAlignment="Left" Header="Osoby upoważnione" />
+        <TabItem HorizontalAlignment="Left" Header="Urzędy" />
+        <TabItem HorizontalAlignment="Left" Header="Profil podatnika" />
+        <TabItem HorizontalAlignment="Left" Header="Umowy" />
+        <TabItem HorizontalAlignment="Left" Header="Rozliczenia" />
+        <TabItem HorizontalAlignment="Left" Header="Podatki" />
+    </TabControl>
+
+
+
+
+    <!-- <uc:General_Data_Of_The_Contractor /> -->
 </Window>
