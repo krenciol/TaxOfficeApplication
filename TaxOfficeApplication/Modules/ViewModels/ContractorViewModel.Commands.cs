@@ -29,6 +29,9 @@ namespace TaxOfficeApplication.Modules.ViewModels
         {
             get => new DelegateCommand<Contractor>(c =>
             {
+                this.eventAggregator.GetEvent<GetAddressesEvent>().Publish(c.id);
+
+
                 var vm = new EditContractorsViewModel(c.Clone() as Contractor);
 
                 bool? success = this.dialogService.ShowDialog<EditContractorsView>(this, vm);

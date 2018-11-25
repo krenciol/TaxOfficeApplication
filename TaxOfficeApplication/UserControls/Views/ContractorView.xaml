@@ -370,7 +370,7 @@
                                 Grid.Row="0"
                                 Grid.Column="1"
                                 Margin="5"
-                                Text="{Binding Addresseses[0].code, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                                Text="{Binding Addresses[0].code, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
                             <Grid
                                 Grid.Row="0"

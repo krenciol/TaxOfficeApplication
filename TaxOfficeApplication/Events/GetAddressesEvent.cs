@@ -2,7 +2,7 @@
 
 namespace TaxOfficeApplication.Events
 {
-    public sealed class GetAdressessEvent : PubSubEvent<int>
+    public sealed class GetAddressesEvent : PubSubEvent<int>
     {
 
     }

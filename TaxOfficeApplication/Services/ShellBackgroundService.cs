@@ -60,7 +60,7 @@ namespace TaxOfficeApplication.Services
 
 
             //Pobranie listy adresów.
-            this.eventAggregator.GetEvent<GetAdressessEvent>().Subscribe((id) =>
+            this.eventAggregator.GetEvent<GetAddressesEvent>().Subscribe((id) =>
             {
                 using (var connection = new SqlConnection(ConnectionString))
                 {
@@ -68,9 +68,9 @@ namespace TaxOfficeApplication.Services
                     DynamicParameters parameters = new DynamicParameters();
                     parameters.Add("@Id", id);
 
-                    var list = connection.Query<Addresses>("GetAllAdressInContractor", parameters, commandType: CommandType.StoredProcedure).ToList();
+                    var list = connection.Query<Address>("GetAllAdressInContractor", parameters, commandType: CommandType.StoredProcedure).ToList();
 
-                    eventAggregator.GetEvent<AddressessListEvent>().Publish(list);
+                    eventAggregator.GetEvent<AddressesListEvent>().Publish(list);
                 }
 
             }, ThreadOption.BackgroundThread, true);

@@ -5,29 +5,19 @@ namespace TaxOfficeApplication.UserControls.ViewModels
 {
     public sealed partial class ContractorViewModel
     {
-        private bool canAddAddress = false;
+        private Contractor contractor;
+        private ObservableCollection<Address> addresses;
 
-        private TaxOfficeApplication.Models.Contractor contractor;
+        public ObservableCollection<Address> Addresses
+        {
+            get => this.addresses;
+            set => this.SetProperty(ref this.addresses, value);
+        }
 
-        private ObservableCollection<Addresses> addresseses = new ObservableCollection<Addresses>();
-
-
-        public TaxOfficeApplication.Models.Contractor Contractor
+        public Contractor Contractor
         {
             get => this.contractor;
-            set => SetProperty(ref this.contractor, value);
-        }
-
-        public ObservableCollection<Addresses> Addresseses
-        {
-            get => this.addresseses;
-            set => SetProperty(ref this.addresseses, value);
-        }
-
-        public bool CanAddAddress
-        {
-            get => this.canAddAddress;
-            set { this.SetProperty(ref this.canAddAddress, value); }
+            set => this.SetProperty(ref this.contractor, value);
         }
     }
 }

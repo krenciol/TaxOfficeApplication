@@ -27,7 +27,7 @@ namespace TaxOfficeApplication.Models
         public DateTime modifiedDate { get; set; }
 
 
-        //        public List<Addresses> AddrsList = new List<Addresses>();
+        //        public List<Address> AddrsList = new List<Address>();
         //        public Notes Notes = new Notes();
 
         public object Clone()

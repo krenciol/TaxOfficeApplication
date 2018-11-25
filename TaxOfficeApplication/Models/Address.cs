@@ -2,7 +2,7 @@
 
 namespace TaxOfficeApplication.Models
 {
-    public sealed class Addresses
+    public sealed class Address
     {
         public int id { get; set; }
         public int super { get; set; }
