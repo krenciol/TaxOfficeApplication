@@ -1,4 +1,7 @@
-﻿using System.Windows.Controls;
+﻿using System.Collections.ObjectModel;
+using System.Windows;
+using System.Windows.Controls;
+using TaxOfficeApplication.Models;
 
 namespace TaxOfficeApplication.UserControls.Views
 {
@@ -10,6 +13,20 @@ namespace TaxOfficeApplication.UserControls.Views
         public AddressDataOfTheContractor()
         {
             this.InitializeComponent();
+            ((FrameworkElement) this.Content).DataContext = this;
+        }
+        public static readonly DependencyProperty AddressProperty = DependencyProperty.Register("Address", typeof(ObservableCollection<Address>), typeof(AddressDataOfTheContractor), new FrameworkPropertyMetadata(null));
+
+        public Address Address
+        {
+            get
+            {
+                return (Address)this.GetValue(AddressProperty);
+            }
+            set
+            {
+                this.SetValue(AddressProperty, value);
+            }
         }
     }
 }

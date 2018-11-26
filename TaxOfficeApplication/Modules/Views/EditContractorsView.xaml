@@ -21,7 +21,7 @@
             <uc:GeneralDataOfTheContractor />
         </TabItem>
         <TabItem HorizontalAlignment="Left" Header="Adresy">
-            <uc:AddressDataOfTheContractor />
+            <uc:AddressDataOfTheContractor Address="{Binding Addresses, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
         </TabItem>
         <TabItem HorizontalAlignment="Left" Header="Osoby upoważnione" />
         <TabItem HorizontalAlignment="Left" Header="Urzędy" />

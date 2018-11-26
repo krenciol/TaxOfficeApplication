@@ -14,7 +14,7 @@ namespace TaxOfficeApplication.Modules.ViewModels
         {
             get => new DelegateCommand(() =>
             {
-                var vm = new EditContractorsViewModel(new Contractor());
+                var vm = new EditContractorsViewModel(new Contractor(), this.eventAggregator);
                 bool? success = this.dialogService.ShowDialog<EditContractorsView>(this, vm);
                 if (success == true)
                 {
@@ -32,7 +32,7 @@ namespace TaxOfficeApplication.Modules.ViewModels
                 this.eventAggregator.GetEvent<GetAddressesEvent>().Publish(c.id);
 
 
-                var vm = new EditContractorsViewModel(c.Clone() as Contractor);
+                var vm = new EditContractorsViewModel(c.Clone() as Contractor, this.eventAggregator);
 
                 bool? success = this.dialogService.ShowDialog<EditContractorsView>(this, vm);
                 if (success == true)
