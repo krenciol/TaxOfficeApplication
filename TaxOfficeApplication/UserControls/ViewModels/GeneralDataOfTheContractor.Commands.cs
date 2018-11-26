@@ -3,7 +3,5 @@
     public sealed partial class GeneralDataOfTheContractor
     {
 
-
-
     }
 }

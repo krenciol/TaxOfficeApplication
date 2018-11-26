@@ -33,6 +33,7 @@
                 Margin="5"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Center"
+                Command="{Binding SaveCommand}"
                 Content="Zapisz"
                 Style="{DynamicResource Windows10Button}" />
         </WrapPanel>
