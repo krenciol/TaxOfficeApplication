@@ -26,7 +26,6 @@
                 Command="{Binding AddContractorCommand}"
                 Content="Nowy"
                 Style="{StaticResource Windows10Button}" />
-            <!--  OrangeButton  -->
         </StackPanel>
 
         <DataGrid

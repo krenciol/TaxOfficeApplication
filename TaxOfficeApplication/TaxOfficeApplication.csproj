@@ -158,9 +158,6 @@
       <DependentUpon>ResourceICO.resx</DependentUpon>
     </Compile>
     <Compile Include="Services\ShellBackgroundService.cs" />
-    <Compile Include="UserControls\ViewModels\AddressDataOfTheContractor.Bindings.cs" />
-    <Compile Include="UserControls\ViewModels\AddressDataOfTheContractor.Commands.cs" />
-    <Compile Include="UserControls\ViewModels\AddressDataOfTheContractor.Model.cs" />
     <Compile Include="UserControls\ViewModels\GeneralDataOfTheContractor.Bindings.cs" />
     <Compile Include="UserControls\ViewModels\GeneralDataOfTheContractor.Commands.cs" />
     <Compile Include="UserControls\ViewModels\GeneralDataOfTheContractor.Model.cs" />

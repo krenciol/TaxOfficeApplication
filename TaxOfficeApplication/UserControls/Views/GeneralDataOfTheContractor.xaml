@@ -26,6 +26,7 @@
                 VerticalAlignment="Center"
                 Command="{Binding ContractorCloseForm}"
                 Content="Anuluj"
+                IsCancel="True"
                 Style="{DynamicResource Windows10Button}" />
             <Button
                 Width="100"

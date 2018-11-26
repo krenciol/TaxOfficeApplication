@@ -52,7 +52,7 @@
                     Grid.Row="0"
                     Grid.Column="1"
                     Margin="5"
-                    Text="{Binding Address[0].code, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    Text="{Binding Address[0].street, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
                 <Grid
                     Grid.Row="0"
@@ -70,12 +70,18 @@
                         Grid.Row="0"
                         Grid.Column="0"
                         Content="Numer" />
-                    <TextBox Grid.Row="0" Grid.Column="1" />
+                    <TextBox
+                        Grid.Row="0"
+                        Grid.Column="1"
+                        Text="{Binding Address[0].office, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
                     <Label
                         Grid.Row="0"
                         Grid.Column="2"
                         Content="Lokal" />
-                    <TextBox Grid.Row="0" Grid.Column="3" />
+                    <TextBox
+                        Grid.Row="0"
+                        Grid.Column="3"
+                        Text="{Binding Address[0].apartament, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
                 </Grid>
 
@@ -101,7 +107,8 @@
             <TextBox
                 Grid.Row="0"
                 Grid.Column="1"
-                Margin="5" />
+                Margin="5"
+                Text="{Binding Address[0].postalCode, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             <Grid
                 Grid.Row="0"
                 Grid.Column="2"
@@ -114,7 +121,10 @@
                     Grid.Row="0"
                     Grid.Column="0"
                     Content="Miasto" />
-                <TextBox Grid.Row="0" Grid.Column="1" />
+                <TextBox
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Text="{Binding Address[0].place, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
             </Grid>
         </Grid>
         <DockPanel
@@ -135,7 +145,7 @@
             CanUserAddRows="False"
             CanUserDeleteRows="False"
             IsReadOnly="True"
-            ItemsSource="{Binding Items, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, IsAsync=True}"
+            ItemsSource="{Binding Address, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, IsAsync=True}"
             SelectedItem="{Binding SelectedItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
             SelectionMode="Single"
             SelectionUnit="FullRow ">
