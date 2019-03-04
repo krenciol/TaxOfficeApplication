@@ -15,6 +15,5 @@ namespace TaxOfficeApplication.ViewModels
                 this.eventAggregator.GetEvent<GetContractorsEvent>().Publish();
             });
         }
-
     }
 }
